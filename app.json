@@ -1,0 +1,44 @@
+{
+  "name": "Topcoder Resource API v6",
+  "description": "RESTful API for managing Topcoder challenge resources with memberId support",
+  "keywords": ["topcoder", "api", "nodejs", "postgresql", "prisma", "rest-api"],
+  "website": "https://github.com/yourusername/topcoder-resource-api-v6",
+  "repository": "https://github.com/yourusername/topcoder-resource-api-v6",
+  "logo": "https://avatars.githubusercontent.com/u/yourusername",
+  "success_url": "/v5/health",
+  "scripts": {
+    "postdeploy": "npm run create-tables && npm run seed-tables"
+  },
+  "env": {
+    "NODE_ENV": {
+      "description": "Node environment",
+      "value": "production"
+    },
+    "AUTH0_CLIENT_ID": {
+      "description": "Auth0 Client ID for authentication",
+      "required": false
+    },
+    "AUTH0_CLIENT_SECRET": {
+      "description": "Auth0 Client Secret for authentication", 
+      "required": false
+    },
+    "LOG_LEVEL": {
+      "description": "Logging level",
+      "value": "info"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "hobby"
+    }
+  },
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}

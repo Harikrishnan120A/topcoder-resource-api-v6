@@ -1,0 +1,12 @@
+runtime: nodejs18
+
+env_variables:
+  NODE_ENV: production
+  DATABASE_URL: your-database-url
+  AUTH0_CLIENT_ID: your-auth0-client-id
+  AUTH0_CLIENT_SECRET: your-auth0-client-secret
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 10
+  target_cpu_utilization: 0.6
